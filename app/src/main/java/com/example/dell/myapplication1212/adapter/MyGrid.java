@@ -37,6 +37,7 @@ public class MyGrid extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         void item(View view,int position);
 }
     private ItemCilckLinear itemCilckLinear;
+
     public void setItemCilckLinear(ItemCilckLinear itemCilckLinear){
         this.itemCilckLinear=itemCilckLinear;
     }
@@ -91,12 +92,42 @@ public class MyGrid extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 Glide.with(context).load(getitem(i).getThumbnail_pic_s()).into(holder1.imageView1);
                 Glide.with(context).load(getitem(i).getThumbnail_pic_s02()).into(holder1.imageView2);
                 Glide.with(context).load(getitem(i).getThumbnail_pic_s03()).into(holder1.imageView3);
+                holder1.imageView1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        itemCilckLinear.item(v,i);
+                    }
+                });
+                holder1.imageView2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        itemCilckLinear.item(v,i);
+                    }
+                });
+                holder1.imageView3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        itemCilckLinear.item(v,i);
+                    }
+                });
                 break;
             case TYPE_TY2:
                  ViewHolder2 holder2= (ViewHolder2) viewHolder;
                  holder2.text1.setText(getitem(i).getTitle());
                  Glide.with(context).load(getitem(i).getThumbnail_pic_s()).into(holder2.typeimageView1);
                 Glide.with(context).load(getitem(i).getThumbnail_pic_s02()).into(holder2.typeimageView2);
+                holder2.typeimageView1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        itemCilckLinear.item(v,i);
+                    }
+                });
+                holder2.typeimageView2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        itemCilckLinear.item(v,i);
+                    }
+                });
                  break;
                  default:
                     break;
